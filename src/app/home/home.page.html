@@ -1,20 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-searchbar [debounce]="250" (ionInput)="filtrarBaralhos($event)" placeholder="Pesquisar"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="false">
+  
+  <ion-grid #grid [fixed]="true">
+    @for(baralho of baralhos; track baralho){
+      <ion-col  size="6">
+        <app-baralho [title]="baralho.title" [pending]="baralho.pending" [total]=" baralho.total"></app-baralho>
+      </ion-col>
+    }
+  </ion-grid>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    
+    <ion-fab-button id="adcBtn">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top" color="primary">
+      <ion-fab-button>
+      
+        <ion-icon name="albums-outline"></ion-icon>
+        <ion-label>Baralho</ion-label>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="reader-outline"></ion-icon>
+        <ion-label>Cartão</ion-label>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

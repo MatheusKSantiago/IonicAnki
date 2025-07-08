@@ -4,6 +4,9 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
+import { StatusBar } from '@capacitor/status-bar';
+
+StatusBar.setOverlaysWebView({ overlay: false });
 
 bootstrapApplication(AppComponent, {
   providers: [

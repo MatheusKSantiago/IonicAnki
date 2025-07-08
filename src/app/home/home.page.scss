@@ -25,3 +25,36 @@
 #container a {
   text-decoration: none;
 }
+ion-fab-list {
+  ion-fab-button::part(native){
+    border-radius: 15px;
+    background-color: #A5B4FC;
+  }
+}
+ion-fab-button::part(native){
+  background-color: #4845D2;
+}
+#adcBtn{
+  ion-icon{
+    color:  white;
+  }
+  &.fab-button-close-active::part(native) {
+    color: white;
+  } 
+  + ion-fab-list{
+      ion-fab-button{
+        width: 200%;
+        transform: translateX(-25%);
+        &::part(native){
+          color: black;
+          font-weight: 200;
+        }
+        ion-icon{
+          color: black;
+        }
+        ion-label{
+          font-weight: 500;
+        }
+      }
+  }
+}
