@@ -1,0 +1,7 @@
+{
+  "name": "ionanki",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
